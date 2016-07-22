@@ -24,7 +24,7 @@
     "socket.io": "~0.9.14"
   },
   "scripts": {
-    "start": "server.js"
+    "start": "node server.js"
   },
   "main": "server.js"
 }
