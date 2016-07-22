@@ -8,7 +8,7 @@ app.set('ip', process.env.OPENSHIFT_NODEJS_IP);
 
 app = config(app);
 
-var server = app.listen(app.get('port'), function(){
+var server = app.listen(app.get('port'), app.get('ip'), function(){
     
     console.log("Server up: https://atlas-wonyk.c9users.io:"+ app.get('port'));
 });
