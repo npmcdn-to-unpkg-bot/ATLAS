@@ -1,12 +1,30 @@
 {
-  "name": "openshift-cartridge-nodejs-template",
-  "version": "1.0.1",
-  "description": "Custom Node.js cartridge for OpenShift - sample application",
-  "private": true,
-  "main": "start.js",
-  "scripts": {
-    "start": "node --use_strict start.js"
+  "name": "atlas",
+  "version": "0.0.0",
+  "description": "A chat example to showcase how to use `socket.io` with a static `express` server with `async` for control flow.",
+  "main": "server.js",
+  "author": "WYK, Ruida",
+  "dependencies": {
+    "async": "~0.2.8",
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "errorhandler": "^1.4.3",
+    "express": "^4.14.0",
+    "express-session": "^1.14.0",
+    "fs": "0.0.2",
+    "method-override": "^2.3.6",
+    "moment": "^2.14.1",
+    "mongodb": "^2.2.1",
+    "mongoose": "^4.5.4",
+    "morgan": "^1.7.0",
+    "multer": "^1.1.0",
+    "path": "^0.12.7",
+    "pug": "^2.0.0-beta3",
+    "serve-favicon": "^2.3.0",
+    "socket.io": "~0.9.14"
   },
-  "author": "Ionut-Cristian Florescu <ionut.florescu@gmail.com>",
+  "scripts": {
+    "start": "node server.js"
+  },
   "license": "ISC"
 }
