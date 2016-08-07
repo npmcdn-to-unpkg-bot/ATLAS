@@ -1,0 +1,59 @@
+<div ui-view="page page-right">
+					<div  class="page-inner full-height">
+						<div class="container align-center detail-info">
+							<div class="row">
+							<div class="panel-body">
+								<h3 class="col-lg-12 col-xs-9" data-ng-bind="formData.inputEmail||'Sign in:'">Sign in:</h3>
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-9">
+									<form name="contactform" class="form-horizontal" role="form">
+										<div class="form-group input--hoshi">
+										</div>
+										<div class="form-group input--hoshi">
+											<div class="input-wrap">
+												<input type="email" ng-model="formData.inputEmail" class="form-control input input__field input__field--hoshi" placeholder="Sign in with Google Account" id="inputEmail" name="inputEmail" required>
+												<label class="input__label input__label--hoshi input__label--hoshi-color-1"></label>
+											</div>
+										</div>
+										<div class="form-group">
+											<div class="align-center">
+												<button type="submit" class="btn btn-default" data-ng-disabled="submitButtonDisabled">
+													<span><span class="arrow-wrap"><span class="arrow"></span></span></span>
+												</button>
+											</div>
+										</div>
+									</form>
+									<p data-ng-class="result">{{ resultMessage }}</p>
+								</div>
+								<div class="col-lg-3 col-md-offset-1 col-md-5 col-sm-offset-1 col-sm-5 col-xs-9">
+									<div class="align-center address-detail">
+									<p>661 Bukit Timah Road,<br/>Singapore 269734.</p>
+									<div class="icon col-lg-2 col-md-2 col-sm-2 col-xs-1"><i class="fa fa-phone"></i></div>
+									<div class="col-lg-10 col-md-10 col-sm-10 col-xs-11 pad-left-zero">
+										<a href="callto:954788315970" target="_blank">Call me maybe</a>
+									</div>
+									<div class="icon col-lg-2 col-md-2 col-sm-2 col-xs-1"><i class="fa fa-fax"></i></div>
+									<div class="col-lg-10 col-md-10 col-sm-10 col-xs-11 pad-left-zero">
+										<a href="callto:954788315970" target="_blank">Or call me this</a>
+									</div>
+									<div class="icon col-lg-2 col-md-2 col-sm-2 col-xs-1"><i class="fa fa-envelope"></i></div>
+									<div class="col-lg-10 col-md-10 col-sm-10 col-xs-11 pad-left-zero">
+										<a href="mailto:hello@theme-nerds.com" target="_blank">Emailthis@formemes.com</a>
+									</div>
+									<div class="col-lg-12  pad-left-zero map">
+									<a class="" href="https://www.google.com/maps/d/viewer?mid=z_gdBE8F4CM4.kd855LF8lFPo&amp;hl=en_US" target="_blank">
+										<span class="">get direction</span><span class="go-arrow"></span>
+									</a>
+									</div>
+								</div>
+
+								</div>
+								<!--Google Map-->
+								<iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d127639.98689546276!2d103.73347318671026!3d1.326186909454343!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x31da1a09bbc92047%3A0xa1220963b9dd51d5!2shwa+chong+inst!3m2!1d1.3261878999999999!2d103.80351379999999!5e0!3m2!1sen!2ssg!4v1469279646970" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+								<!--/Google Map-->
+							</div>
+							</div>
+						</div>
+
+						<div class="trans-overlay-dark-contact"></div>
+            		</div>
+				</div>
