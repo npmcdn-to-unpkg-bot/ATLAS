@@ -7,4 +7,3 @@ mongoose.connection.on('connected', function(){
 
 require('./users');
 require('./items');
-require('./contact');

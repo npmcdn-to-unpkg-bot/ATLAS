@@ -1,7 +1,7 @@
 var mongoose = require("mongoose");
 
 var userSchema = new mongoose.Schema({
-    realname: {
+   /* realname: {
         type: String,
         required: true,
     },
@@ -14,20 +14,19 @@ var userSchema = new mongoose.Schema({
         type: String,
         required: true,
         unique: true
-    },
+    },*/
     ownEmail: {
         type: String,
-        required: true,
-        unique: true
-    },
-    profilePic: {
+        required: true
+    }
+  /*  profilePic: {
         data: Buffer,
         contentType: String
     },
     description: {
         type: String
     },
-    
+    */
 });
 
 mongoose.model("users", userSchema);
