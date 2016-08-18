@@ -15,7 +15,10 @@
             templateUrl: '/about/about.view.html',
             controller: 'aboutCtrl'
         })
-
+        .when('/login', {
+            templateUrl: '/login/login.view.html',
+            controller: 'loginCtrl'
+        })
         .otherwise({redirectTo: '/'});
         
         $locationProvider.html5Mode({enabled: true, requireBase: false});

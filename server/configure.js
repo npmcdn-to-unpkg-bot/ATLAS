@@ -11,8 +11,8 @@ var errorHandler = require("errorhandler");
 
 module.exports = function(app){
     
-//require('../app/models/db.js'); 
-//var routes= require("../app/routes/index");
+require('../app/models/db.js'); 
+var routes= require("../app/routes/index");
 
 app.use(morgan('dev'));
 app.use(bodyParser.json());
@@ -21,7 +21,7 @@ app.use(cookieParser('some-secret-value-here'));
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.static(path.join(__dirname, '../app_client')));
 
-//app.use("/api", routes);
+app.use("/api", routes);
 
 app.use(function(req, res){
     res.sendFile(path.join(__dirname, "../app_client", "index.html"));

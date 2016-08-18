@@ -4,7 +4,7 @@ var router = express.Router();
 var CtrlUser = require("../controllers/user");
 
 
-router.post('/', CtrlUser.addOwnEmail);
+router.post('/login', CtrlUser.register);
 
 
 module.exports = router;

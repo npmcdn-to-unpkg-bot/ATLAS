@@ -3,18 +3,10 @@
     .module('Atlas')
     .controller('homeCtrl', homeCtrl);
     
-    homeCtrl.$inject = ['$scope', '$http'];
+    homeCtrl.$inject = ['$scope','$location'];
     
-    function homeCtrl($scope, $http){
-    
-    $scope.error = "Hello World";
-    
-    $scope.onSubmit = function() {
-           return $http.post ('/api', {
-                ownEmail: $scope.ownEmail
-            });
-            };
-        
+    function homeCtrl($scope,$location){
+        $scope.returnPage = $location.search().page || '/';
     }
     
 
