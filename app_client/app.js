@@ -1,31 +1,34 @@
 (function(){
     
     angular
-        .module('Atlas', ['ngRoute']);
+        .module('Atlas', ['ui.router']);
         
     
-        function routing ($routeProvider, $locationProvider) {
+        function routing ($locationProvider, $stateProvider, $urlRouterProvider) {
+            
+   $urlRouterProvider.otherwise('/');
     
-    $routeProvider
-        .when('/', {
+    $stateProvider
+        .state('home', {
+            url: '/',
             templateUrl: '/home/home.view.html',
             controller: 'homeCtrl'
         })
-        .when('/about', {
+        .state('about', {
+            url: '/about',
             templateUrl: '/about/about.view.html',
             controller: 'aboutCtrl'
         })
-        .when('/login', {
+        .state('login', {
+            url: '/login',
             templateUrl: '/login/login.view.html',
             controller: 'loginCtrl'
-        })
-        .otherwise({redirectTo: '/'});
+        });
         
         $locationProvider.html5Mode({enabled: true, requireBase: false});
 }
    angular
     .module('Atlas')
-    .config(['$routeProvider', '$locationProvider', routing]);
-    
+    .config(['$locationProvider', '$stateProvider', '$urlRouterProvider', routing]);
     
 })();
