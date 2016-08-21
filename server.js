@@ -1,6 +1,7 @@
 var express = require('express'),
 config = require('./server/configure'),
 app = express();
+var stormpath = require('express-stormpath');
  
 app.set('port', process.env.PORT || 8080);
 //app.set('port', process.env.OPENSHIFT_NODEJS_PORT || 8080); //for openshift
@@ -9,9 +10,12 @@ app.set('port', process.env.PORT || 8080);
 app = config(app);
 
 //var server = app.listen(app.get('port'), app.get('ip'), function(){
-var server = app.listen(app.get('port'), function(){
+app.on('stormpath.ready', function()
+    {
+        app.listen(app.get('port'), function(){
     console.log("Server up: https://atlas-wonyk.c9users.io:"+ app.get('port'));
 });
+    });
 
 //Execute Program here. (Execute after mongo started if applicable)
 //Reference website http://hwachongib.wix.com/atlas

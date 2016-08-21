@@ -9,12 +9,16 @@ var fs = require('fs');
 var moment = require('moment');
 var methodOverwrite = require("method-override");
 var errorHandler = require("errorhandler");
+var stormpath = require('express-stormpath');
 
 module.exports = function(app){
     
 require('../app/models/db.js'); 
 var routes= require("../app/routes/index");
 
+app.use(stormpath.init(app, {
+  website: true
+}));
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

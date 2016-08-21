@@ -1,12 +1,16 @@
 (function(){
     
     angular
-        .module('Atlas', ['ui.router']);
+        .module('Atlas', ['ui.router', 'stormpath', 'stormpath.templates']);
         
     
-        function routing ($locationProvider, $stateProvider, $urlRouterProvider) {
+        function routing ($locationProvider, $stateProvider, $urlRouterProvider, $stormpath) {
             
-   $urlRouterProvider.otherwise('/');
+    $stormpath.uiRouter({
+        loginState: 'login',
+        defaultPostLoginState: 'home'
+        
+    $urlRouterProvider.otherwise('/');
     
     $stateProvider
         .state('home', {
@@ -17,18 +21,24 @@
         .state('about', {
             url: '/about',
             templateUrl: '/about/about.view.html',
-            controller: 'aboutCtrl'
+            controller: 'aboutCtrl',
+            sp: {
+                 authenticate: true
+                }
         })
         .state('login', {
             url: '/login',
-            templateUrl: '/login/login.view.html',
+            templateUrl: '/login2/login.view.html',
             controller: 'loginCtrl'
         });
+    });
+            
+   
         
         $locationProvider.html5Mode({enabled: true, requireBase: false});
 }
    angular
     .module('Atlas')
-    .config(['$locationProvider', '$stateProvider', '$urlRouterProvider', routing]);
+    .config(['$locationProvider', '$stateProvider', '$urlRouterProvider', '$stormpath', routing]);
     
 })();
