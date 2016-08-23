@@ -15,6 +15,7 @@ module.exports = function(app){
 require('../app/models/db.js'); 
 var routes= require("../app/routes/index");
 
+app.use(favicon(__dirname + '../../public/img/favicon.ico'));
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
