@@ -67,11 +67,12 @@
 	                            <div class="form-bottom">
 				                    <div class="social-login">
 	                        	<div class="social-login-buttons">
-		                        	<a class="btn btn-link-1 btn-link-1-google-plus" href="/#login?page={{ returnPage }}">
+		                        	<a class="btn btn-link-1 btn-link-1-google-plus" ng-click = "GoogleLogin()">
 		                        		<i class="fa fa-google-plus"></i> Google Plus
 		                        	</a>
 	                        	</div>
 	                        </div>
+	                        {{ GoogleLoginError }}
 			                    </div>
                         	</div>
                         	

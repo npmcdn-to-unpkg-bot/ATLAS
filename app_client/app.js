@@ -1,7 +1,7 @@
 (function(){
     
     angular
-        .module('Atlas', ['ngRoute']);
+        .module('Atlas', ['ngRoute', 'firebase']);
         
         function routing ($routeProvider, $locationProvider) {
     $routeProvider
