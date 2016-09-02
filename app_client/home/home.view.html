@@ -27,8 +27,11 @@
                     <li>
                         <a class="page-scroll" href="/#about">About</a>
                     </li>
-                    <li>
+                    <li ng-hide="firebaseUser">
                         <a class="page-scroll" href="/#login?page={{ returnPage }}">Login</a>
+                    </li>
+                    <li ng-show="firebaseUser">
+                        <a class="page-scroll" ng-click="authObj.$signOut()" href="/">Logout</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="/#shop">SHOP NOW!</a>
@@ -93,14 +96,14 @@
                     <div class="service-box">
                         <i class="fa fa-4x fa-code text-primary sr-icons"></i>
                         <h3>Modern Design</h3>
-                        <p class="text-muted">Atlas is optimised for productivity and user friendliness.</p>
+                        <p class="text-muted">ATLAS is optimised for productivity and user friendliness.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
                         <i class="fa fa-4x fa-laptop text-primary sr-icons"></i>
                         <h3>Easy to Use</h3>
-                        <p class="text-muted">Atlas can be used on most devices without software installs.</p>
+                        <p class="text-muted">ATLAS can be used on most devices without software installs.</p>
                     </div>
                 </div>
             </div>
@@ -232,6 +235,6 @@
             </div>
         </div>
         <div class = "col-lg-4 text-center">
-            <p>&copy; Won Ying Keat | Ding Ruida | HCEEC</p>
+            <p>&copy; 2016 | Won Ying Keat</p>
         </div>
     </section>

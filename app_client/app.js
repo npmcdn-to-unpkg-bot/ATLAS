@@ -17,6 +17,10 @@
             templateUrl: '/login/login.view.html',
             controller: 'loginCtrl'
         })
+        .when('/:user/profile', {
+            templateUrl: '/user/profile.view.html',
+            controller: 'UserCtrl'
+        })
         .otherwise({redirectTo: '/'});
         
         $locationProvider.html5Mode({enabled: true, requireBase: false});

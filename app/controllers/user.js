@@ -10,11 +10,24 @@ module.exports.test = function(req,res){
 };
 
 module.exports.login = function(req,res){
-    People.create({
-        uid: req.body.uid,
-        profilePic: req.body.profilePic,
-        username: req.body.username,
-        ownEmail: req.body.ownEmail
-    });
-    console.log("Yeah I know you are " + req.body.username);
+    if (req.body.uid) {
+        People.findOne({uid: req.body.uid})
+        .exec(function(err, user) {
+            if (!user){
+                People.create({
+                uid: req.body.uid,
+                profilePic: req.body.profilePic,
+                username: req.body.username,
+                ownEmail: req.body.ownEmail
+            });
+            console.log("Yeah I know you are " + req.body.username);
+            }
+            else if (err) {
+                console.log(err);
+                return;
+            }
+            console.log("Yeah, this proved its working..");
+        });
+    }
+    
 };

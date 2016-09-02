@@ -17,8 +17,16 @@ var userSchema = new mongoose.Schema({
         type: String,
         unique: true,
         required: true
+    },
+    nickname : {
+        type: String,
+        unique: true,
+        required: true
+    },
+    interests: [String],
+    description: {
+        type: String
     }
-    
 });
 
 mongoose.model("users", userSchema);

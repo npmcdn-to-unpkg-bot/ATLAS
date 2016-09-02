@@ -39,7 +39,8 @@
             username: result.user.displayName,
             profilePic: result.user.photoURL
         });
-        $scope.GoogleLoginError = "Hi " + result.user.displayName;
+       // var returns = $location.search('page', null);
+    //    $location.path(returns);
     }).catch(function(error) {
         console.error("Authentication failed:", error);
         $scope.GoogleLoginError = "Sorry, please try again...";

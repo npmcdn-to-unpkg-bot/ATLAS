@@ -1,6 +1,6 @@
 Hello everybody!
 
-ATLAS is a web app self made by Hwa Chong people: Won Ying Keat & Ding Radar.
+ATLAS is a web app self made by Hwa Chong people: Won Ying Keat
 
 We wish to help HCEEC for free to help create a better website for ATLAS to replace the shit-y old one.
 
