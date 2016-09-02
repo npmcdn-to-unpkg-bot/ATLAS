@@ -1,32 +1,42 @@
 (function(){
     
     angular
-        .module('Atlas', ['ngRoute', 'firebase']);
+        .module('Atlas', ['firebase', 'ui.router']);
         
-        function routing ($routeProvider, $locationProvider) {
-    $routeProvider
-        .when('/', {
+        function routing ($locationProvider, $stateProvider, $urlRouterProvider) {
+            
+    $stateProvider
+        .state('index', {
+            url: '/',
             templateUrl: '/home/home.view.html',
             controller: 'homeCtrl',
         })
-        .when('/about', {
+        .state('about', {
+            url: '/about',
             templateUrl: '/about/about.view.html',
             controller: 'aboutCtrl'
         })
-        .when('/login', {
+        .state('login', {
+            url: '/login',
             templateUrl: '/login/login.view.html',
             controller: 'loginCtrl'
-        })
-        .when('/:user/profile', {
-            templateUrl: '/user/profile.view.html',
-            controller: 'UserCtrl'
-        })
-        .otherwise({redirectTo: '/'});
+        });
         
-        $locationProvider.html5Mode({enabled: true, requireBase: false});
+    $urlRouterProvider.rule(function($injector, $location) {
+    var path = $location.path();
+    var hasTrailingSlash = path[path.length-1] === '/';
+    if(hasTrailingSlash) {
+      var newPath = path.substr(0, path.length - 1); 
+      return newPath; 
+    }
+  });
+  
+    $urlRouterProvider.otherwise('/');
+   
+    $locationProvider.html5Mode({enabled: true, requireBase: false});
 }
    angular
     .module('Atlas')
-    .config(['$routeProvider', '$locationProvider', routing]);
+    .config(['$locationProvider', '$stateProvider', '$urlRouterProvider', routing]);
     
 })();
